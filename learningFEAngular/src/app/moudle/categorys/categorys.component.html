@@ -1,16 +1,18 @@
-<div>
-  <table class="styleTable">
-    <tr>
+<div class="divDad row">
+  <ng-container class="styleTable">
+    <thead>
+      <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>Detail</th>
-    </tr>
-    <tr>
-      <td>tuananh</td>
-      <td>2222</td>
-    </tr>
-    <tr>
-      <td>tuananh1</td>
-      <td>33333</td>
-    </tr>
-  </table>
-</div>>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of dataTable">
+      <tr (click)="clickEdit(item)">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.detail}}</td>
+      </tr>
+    </tbody>
+  </ng-container>
+</div>

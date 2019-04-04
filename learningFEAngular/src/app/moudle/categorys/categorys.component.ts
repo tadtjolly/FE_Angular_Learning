@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataCategoryList } from './model/dataCategory-list-model';
 
 @Component({
   selector: 'app-categorys',
@@ -7,10 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategorysComponent implements OnInit {
 
+  dataTable: DataCategoryList[] = [
+    {
+      id: 'G1',
+      name: 'hihi',
+      detail: 'tttt',
+      dateRepull: null
+    },
+    {
+      id: 'G2',
+      name: 'tuanana',
+      detail: 'chitiet',
+      dateRepull: null
+    },
+  ];
+
   constructor() { }
 
-  dataTable = []
   ngOnInit() {
+  }
+
+  clickEdit(e: any) {
+    alert('hihi');
+    console.log(e);
   }
 
 }
