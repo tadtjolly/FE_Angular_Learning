@@ -8,20 +8,39 @@ import { DataCategoryList } from './model/dataCategory-list-model';
 })
 export class CategorysComponent implements OnInit {
 
+  headerNameTable = [
+    {
+      name: 'ID',
+    },
+    {
+      name: 'name',
+    },
+    {
+      name: 'detail',
+    },
+    {
+      name: 'repull',
+    }
+  ];
+
   dataTable: DataCategoryList[] = [
     {
       id: 'G1',
       name: 'hihi',
       detail: 'tttt',
-      dateRepull: null
+      dateRepull: 11111
     },
     {
       id: 'G2',
       name: 'tuanana',
       detail: 'chitiet',
-      dateRepull: null
+      dateRepull: 22222
     },
   ];
+
+  dataTableDetail: DataCategoryList[];
+
+  checkTableDetail = false;
 
   constructor() { }
 
@@ -29,8 +48,10 @@ export class CategorysComponent implements OnInit {
   }
 
   clickEdit(e: any) {
-    alert('hihi');
     console.log(e);
+    this.checkTableDetail = true;
+    this.dataTableDetail = [];
+    this.dataTableDetail.push(e);
   }
 
 }
