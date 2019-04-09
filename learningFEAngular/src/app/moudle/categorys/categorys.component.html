@@ -1,23 +1,25 @@
 <div class="row">
   <div class="divTable1 col-md-8">
-    <ng-container class="styleTable">
-      <thead>
-        <tr>
-          <th *ngFor="let item of headerNameTable">{{item.name}}</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let item of dataTable">
-        <tr (click)="clickEdit(item)">
-          <td>{{item.id}}</td>
-          <td>{{item.name}}</td>
-          <td>{{item.detail}}</td>
-          <td>{{item.dateRepull}}</td>
-        </tr>
-      </tbody>
-    </ng-container>
+    <table class="table">
+      <ng-container class="styleTable">
+        <thead>
+          <tr>
+            <th *ngFor="let item of headerNameTable">{{item.name}}</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of dataTable">
+          <tr (click)="clickEdit(item)">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.detail}}</td>
+            <td>{{item.dateRepull}}</td>
+          </tr>
+        </tbody>
+      </ng-container>
+    </table>
   </div>
-  <div class="divTable2 col-md-4">
-    <table *ngIf="checkTableDetail" class="divTable2">
+  <div class="col-md-4">
+    <table *ngIf="checkTableDetail" class="table">
       <ng-container class="styleTable">
         <thead>
           <tr>

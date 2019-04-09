@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalModule } from 'angular-custom-modal';
+import { MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { CreatnewComponent } from '../creatnew/creatnew.component';
 
 @Component({
   selector: 'app-details',
@@ -7,13 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
   createAccount() {
-    alert('create');
+    console.log('222');
   }
 
+  openDialog(): void {
+    console.log('ssss');
+    const dialogRef = this.dialog.open(CreatnewComponent, {
+      width: '300px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('hihi');
+    });
+}
 }
