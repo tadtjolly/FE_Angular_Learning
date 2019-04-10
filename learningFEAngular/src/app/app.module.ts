@@ -9,6 +9,7 @@ import { CreatnewComponent } from './moudle/creatnew/creatnew.component';
 import { ModalModule } from 'angular-custom-modal';
 import { MaterialModule } from './meterial';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // import { MaterialModule } from './material';
 
 @NgModule({
@@ -23,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     ModalModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule
     // MaterialModule
   ],
   providers: [],

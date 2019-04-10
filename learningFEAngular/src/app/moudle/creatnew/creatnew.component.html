@@ -31,12 +31,31 @@
     </div>
   </div>
 </div> -->
-
-<h1 mat-dialog-title>Hi </h1>
-<div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-</div>
-<div mat-dialog-actions>
-  <!-- <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button> -->
-</div>
+<form [formGroup]="nForm" class="form-group" (ngSubmit)="onSubmit()">
+  <h1 mat-dialog-title>Hi </h1>
+  <div mat-dialog-content>
+    <p>Create new animal</p>
+    <div>
+      <div>
+        <input type="text" placeholder="name" formControlName="name">
+        <div class="col alert alert-danger" role="alert" *ngIf="nForm.controls.name.errors?.required &&
+        nForm.controls.name.touched">
+          {{showMessError('name')}}
+        </div>
+        <div class="col alert alert-danger" role="alert" *ngIf="nForm.controls.name.errors?.value?.checkMin &&
+        nForm.controls.name.touched">
+          {{showMessError('ttt')}}
+        </div>
+        <code>{{nForm.controls.name.errors?.required}}</code>
+        <code>{{nForm.controls.name.errors?.value?.checkMin}}</code>
+      </div>
+      <div>
+        <input type="text" placeholder="detail" formControlName="detail">
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
+    <button type="submit" [mat-dialog-close]="true">Ok</button>
+  </div>
+</form>

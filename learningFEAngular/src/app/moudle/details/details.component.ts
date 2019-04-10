@@ -22,11 +22,13 @@ export class DetailsComponent implements OnInit {
   openDialog(): void {
     console.log('ssss');
     const dialogRef = this.dialog.open(CreatnewComponent, {
-      width: '300px'
+      width: '400px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
       console.log('hihi');
     });
-}
+
+  }
 }
