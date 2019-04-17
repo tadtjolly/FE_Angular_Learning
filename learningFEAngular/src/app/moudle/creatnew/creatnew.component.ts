@@ -18,7 +18,7 @@ export class CreatnewComponent implements OnInit {
   data: DataCategoryList[] = [];
 
   constructor(private formbuilder: FormBuilder, private router: Router,
-              @Inject(MAT_DIALOG_DATA) public ss: DataCategoryList, dialogRef: MatDialogRef<CreatnewComponent>) { }
+              public dialogRef: MatDialogRef<CreatnewComponent>) { }
 
   ngOnInit() {
     this.nForm = this.formbuilder.group({
@@ -47,8 +47,10 @@ export class CreatnewComponent implements OnInit {
         detail: '3',
         dateRepull: 1
       });
+      alert('ok');
       console.log('ton tai');
       // this.router.navigate(['detail']);
+      this.dialogRef.close();
     } else {
       console.log(this.nForm.get('name'));
       console.log('ko ton tai');
